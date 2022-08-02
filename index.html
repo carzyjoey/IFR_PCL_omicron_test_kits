@@ -67,6 +67,15 @@
 			padding: 10px;
 			border-radius: 120px 20px;
 		}
+
+		/* 1143 高度 100% */
+		body,
+		html,
+		.main-display-area,
+		/* .col-md-7 { */
+			.embed-responsive{
+			height: 100%;
+		}
 	</style>
 	<!-- #joey 其他 css 轉到 styles/joey_style.css 強化 可讀性 -->
 	<link href="styles/joey_style.css" rel="stylesheet" type="text/css">
@@ -300,9 +309,15 @@
 				<!-- <button class="btn btn-dark text-white btnup">加入我</button> -->
 
 				<!-- bootstrap iframe auto size -->
-				<div class="embed-responsive embed-responsive-16by9 h-25 m=20px">
+				<div class="embed-responsive embed-responsive-16by9 m=20px">
 					<iframe class="embed-responsive-item" src="getEmail.html" allowfullscreen></iframe>
 				</div>
+
+
+				<!-- <div class="col-md-7">
+					<iframe src="getEmail.html" id="info" class="iframe" name="info" seamless="" height="100%"
+						width="100%"></iframe>
+				</div> -->
 
 			</div>
 		</div>
