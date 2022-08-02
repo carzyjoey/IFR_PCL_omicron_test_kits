@@ -28,7 +28,11 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+	<meta property="og:url" content="https://ifr-pcl-omicron-test-kits.netlify.app" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="PCL 易可安唾液快篩試劑組" />
+	<meta property="og:description" content="經銷商 : 匀彩股份有限公司 (IFR)" />
+	<meta property="og:image" content="images/IFR_info.jpg" />
 
 	<!-- 引用 handlebars -->
 	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
@@ -73,7 +77,7 @@
 		html,
 		.main-display-area,
 		/* .col-md-7 { */
-			.embed-responsive{
+		.embed-responsive {
 			height: 100%;
 		}
 	</style>
@@ -308,6 +312,8 @@
 					也歡迎大家加入我這個小螺絲。</p> -->
 				<!-- <button class="btn btn-dark text-white btnup">加入我</button> -->
 
+				<!-- boostrap iframe 垂直 100% show -->
+				<!-- https://www.codeply.com/go/7qgtRoYg55 -->
 				<!-- bootstrap iframe auto size -->
 				<div class="embed-responsive embed-responsive-16by9 m=20px">
 					<iframe class="embed-responsive-item" src="getEmail.html" allowfullscreen></iframe>
@@ -335,19 +341,19 @@
 		</div>
 		<div class="row">
 			<!--第五組三角形-->
-			<div class="col bg-primary py-5 skew9"></div>
+			<div class="col bg-info py-5 skew9"></div>
 			<!--左傾斜區塊-->
-			<div class="col bg-primary py-5 skew10"></div>
+			<div class="col bg-info py-5 skew10"></div>
 			<!--右傾斜區塊-->
 		</div>
 
 
 		<!-- #joey 頁尾區塊 -->
-		<div class="row bg-primary">
+		<div class="row bg-info">
 			<!--頁尾內容區塊-->
 			<div class="col col-sm-8 offset-sm-2 text-center">
 				<!-- GDS 留言板 20220519 -->
-				<h2>勻彩視訊很高興為你服務。<br> glad to be of service .</h2>
+				<h2>勻彩視訊很高興為你服務。<br> Glad To Be of Service .</h2>
 				<!-- <p>除了專案服務外，我也提供線上諮詢服務，歡迎您留下訊息。</p> -->
 				<!-- <p>勻彩視訊很高興為你服務。</p> -->
 				<!-- <button type="button" class="btn btn-success"
@@ -356,8 +362,9 @@
 		</div>
 
 
-		<div class="row bg-primary py-5">
+		<div class="row bg-info py-5">
 			<!--頁尾內容區塊2 社群平台連結 與工作室版權宣告-->
+
 			<div class="col text-center">
 				<!-- <a href="---"><i class="fab fa-blogger fa-3x text-white mx-3"></i></a>
 				<a href="---"><i
@@ -365,13 +372,45 @@
 				<a href="---"><i
 						class="fab fa-instagram fa-3x text-white mx-3"></i></a> -->
 				<a href="https://www.facebook.com/jammy.chen.50"><i
-						class="fab fa-facebook-square fa-3x text-white mx-3"></i></a>
+						class="fab fa-facebook-square fa-2x text-white mx-3"></i></a>
 				<!-- <a href="---"><i class="fab fa-github-square fa-3x text-white mx-3"></i></a> -->
-				<a href=""><i class="fas fa-paper-plane fa-3x text-white mx-3"></i></a>
+				<!-- <a href=""><i class="fas fa-paper-plane fa-2x text-white mx-3 mr-4" ></i></a> -->
+
+				<!-- [HTML] 製作『複製』功能的按鈕 -->
+				<!-- https://clay-atlas.com/blog/2020/03/04/html-chinese-note-copy-text-string-button-function/ -->
+
+				<!-- https://fontawesome.com/v3/examples/ -->
+				<a class="btn" onclick="copyEvent('copy')"><i class="fas fa-paper-plane fa-2x text-white mx-3 mr-4 mb-3" ></i></a>
+
+				<script>
+					function copyEvent(id) {
+						var str = document.getElementById(id);
+						window.getSelection().selectAllChildren(str);
+						document.execCommand("Copy")
+
+						alert("已複製網址 到剪貼簿 https://ifr-pcl-omicron-test-kits.netlify.app");
+					}
+				</script>
+
 				<!-- <a href="---"><i class="fab fa-bitcoin fa-3x text-white mx-3"></i></a> -->
+				<!-- https://developers.facebook.com/docs/plugins/share-button?locale=zh_TW -->
+				<!-- Load Facebook SDK for JavaScript -->
+
+				<!-- FB 分享 -->
+				<!-- https://developers.facebook.com/docs/plugins/share-button?locale=zh_TW -->
+				<!-- <div id="fb-root"></div> -->
+				<script async defer crossorigin="anonymous"
+					src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v14.0&appId=183782008451944&autoLogAppEvents=1"
+					nonce="gzO7PLQ7"></script>
+
+				<div class="fb-share-button" data-href="https://ifr-pcl-omicron-test-kits.netlify.app/"
+					data-layout="button_count" data-size="large"><a target="_blank"
+						href="https://ifr-pcl-omicron-test-kits.netlify.app/" class="fb-xfbml-parse-ignore">分享</a></div>
+
 
 				<!-- <p class="mt-5 h6">&copy;Allrights reserved | Design:DHS.Tristan Mai 2019</p> -->
 				<p class="mt-5 h6">&copy;Allrights reserved | Modify : joey 22-08</p>
+				<p id="copy">https://ifr-pcl-omicron-test-kits.netlify.app</p>
 			</div>
 		</div>
 	</div>
