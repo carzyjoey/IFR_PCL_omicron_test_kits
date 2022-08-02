@@ -126,8 +126,9 @@
 				 " alt="主視覺 PCL"> -->
 
 
-				<img id="example1" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmrt0E_Bmpufj4XfvKnaApGkb0PmVUsRzX15aaMQW8zhOmmKPrIPJlX72fCQtv0GSw6GJAosDuy9lvNNKLBp4PV7242PfwkKL6MppoJN5ztpYNhZguM_XZ8K0ilVlHBeW104W6QsBrqIRTIbuCwO1gn0ecZohTsB0h_RUKv3Q1f4AS0mu4FzdiNmakEA/w640-h432/20220731004.png" alt="" //
-					class="img-fluid" alt="Responsive image">
+				<img id="example1"
+					src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmrt0E_Bmpufj4XfvKnaApGkb0PmVUsRzX15aaMQW8zhOmmKPrIPJlX72fCQtv0GSw6GJAosDuy9lvNNKLBp4PV7242PfwkKL6MppoJN5ztpYNhZguM_XZ8K0ilVlHBeW104W6QsBrqIRTIbuCwO1gn0ecZohTsB0h_RUKv3Q1f4AS0mu4FzdiNmakEA/w640-h432/20220731004.png"
+					alt="" // class="img-fluid" alt="Responsive image">
 
 
 				<h1 class="text-white mt-5">PCL 易可安唾液快篩試劑組</h1>
@@ -139,18 +140,19 @@
 				<!-- <button class="w3-button w3-circle w3-green">+</button> -->
 				<!-- <a href="https://examination1216.000webhostapp.com/prj_list_html/index.html" class="w3-button w3-circle w3-green">+</a> -->
 
-				<!-- #joey Btn link  -->
-				<button type="button" class="btn btn-secondary w3-yellow" onclick="window.open('https://www.fda.gov.tw/tc/siteList.aspx?sid=12171'
+				<!-- #joey Btn link -->
+				<!-- Spacing (key word) : Bootstrap 給按鈕之間留出間距 mr-1 mt-1-->
+				<button type="button" class="btn btn-secondary w3-yellow mr-1 mt-1" onclick="window.open('https://www.fda.gov.tw/tc/siteList.aspx?sid=12171'
 					)">(防疫專案核准輸入第1110806424號)</button>
-				<button type="button" class="btn btn-success" onclick="window.open('http://www.enimmune.com.tw/tw/news/%E6%96%B0%E8%81%9E%E9%9B%86%E9%8C%A6/%E7%AC%AC%E4%B8%89%E6%AC%BE%E5%AE%B6%E7%94%A8%E5%94%BE%E6%B6%B2%E5%BF%AB%E7%AF%A9%E6%98%93%E5%8F%AF%E5%AE%89-%E7%8D%B2%E8%A1%9B%E7%A6%8F%E9%83%A8%E6%A0%B8%E5%87%86%E5%9C%A8%E5%8F%B0%E8%B2%A9%E5%94%AE'
+				<button type="button" class="btn btn-success mr-1 mt-1" onclick="window.open('http://www.enimmune.com.tw/tw/news/%E6%96%B0%E8%81%9E%E9%9B%86%E9%8C%A6/%E7%AC%AC%E4%B8%89%E6%AC%BE%E5%AE%B6%E7%94%A8%E5%94%BE%E6%B6%B2%E5%BF%AB%E7%AF%A9%E6%98%93%E5%8F%AF%E5%AE%89-%E7%8D%B2%E8%A1%9B%E7%A6%8F%E9%83%A8%E6%A0%B8%E5%87%86%E5%9C%A8%E5%8F%B0%E8%B2%A9%E5%94%AE'
 					)">2022- 06 - 06 新聞集錦</button>
 
-				<button class="btn btn-success w3-red"
-					onclick="window.open('https://www.youtube.com/watch?v=H5pdPS4lND0')">YouTube 教學</button>
-				<!-- <button class="w3-button w3-circle w3-red"
-					onclick="window.open('---')">+</button>
-				<button class="w3-button w3-circle w3-green"
-					onclick="window.open('---')">+</button> -->
+				<button class="btn btn-success w3-red mr-1 mt-1""
+					onclick=" window.open('https://www.youtube.com/watch?v=H5pdPS4lND0')">YouTube 教學(易可安唾液快篩)</button>
+				<button class="btn btn-success w3-pink mr-1 mt-1" onclick="window.open('https://www.commonhealth.com.tw/article/85731?fbclid=IwAR1E5dc2yaN7puT0POzaeAYg5E3IXJSEoHL8VxK9UPKbtVDRkA1BDuvvWHM'
+					)">改唾液更準確？</button>
+				<button class="btn btn-success w3-white mr-1 mt-1" onclick="window.open('https://www.taiwanhot.net/news/999384/Omicron+BA.4%E3%80%81BA.5%E9%80%B2%E9%80%BC+%E6%9F%AF%E6%96%87%E5%93%B2%E4%BC%B0%EF%BC%9A%E8%8B%A5%E5%8F%B0%E7%81%A3%E8%A6%81%E5%87%BA%E5%95%8F%E9%A1%8C%EF%BC%8C%E6%9C%83%E5%9C%A840%E5%A4%A9%E5%BE%8C'
+					)">柯文哲估計</button>
 
 			</div>
 		</div>
@@ -225,6 +227,11 @@
 						<p class="text-justify px-3 txtFormat">{{values.[31].[3]}}</p>
 					</div>
 			</div>
+
+			<!-- bootstrap iframe auto size -->
+			<!-- <div class="embed-responsive embed-responsive-16by9 m=20px">
+				<iframe class="embed-responsive-item" src="https://www.youtube.com/watch?v=H5pdPS4lND0" allowfullscreen></iframe>
+			</div> -->
 			
 		</script>
 
@@ -288,11 +295,19 @@
 			<!--聯絡訊息與服務宗旨 加入我們連結至表單-->
 			<div class="col-md-6 offset-md-3 text-center border border-secondary border-left-0 border-right-0 p-3">
 				<h2 class="h3 text-center">取得更多服務</h2>
-				<p class="text-center h5 txtFormat">除了視覺的專案服務外，我也提供教育訓練、活動企劃、專案輔導等項目.
-					也歡迎大家加入我這個小螺絲。</p>
-				<button class="btn btn-dark text-white btnup">加入我</button>
+				<!-- <p class="text-center h5 txtFormat">除了視覺的專案服務外，我也提供教育訓練、活動企劃、專案輔導等項目.
+					也歡迎大家加入我這個小螺絲。</p> -->
+				<!-- <button class="btn btn-dark text-white btnup">加入我</button> -->
+
+				<!-- bootstrap iframe auto size -->
+				<div class="embed-responsive embed-responsive-16by9 h-25 m=20px">
+					<iframe class="embed-responsive-item" src="getEmail.html" allowfullscreen></iframe>
+				</div>
+
 			</div>
 		</div>
+
+
 
 
 		<!-- 三角形修飾(下) -->
@@ -340,7 +355,7 @@
 				<!-- <a href="---"><i class="fab fa-bitcoin fa-3x text-white mx-3"></i></a> -->
 
 				<!-- <p class="mt-5 h6">&copy;Allrights reserved | Design:DHS.Tristan Mai 2019</p> -->
-				<p class="mt-5 h6">&copy;Allrights reserved | Modify:joey 22-0801</p>
+				<p class="mt-5 h6">&copy;Allrights reserved | Modify : joey 22-08</p>
 			</div>
 		</div>
 	</div>

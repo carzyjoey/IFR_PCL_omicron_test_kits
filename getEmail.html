@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./OXXO.STUDIO_files/jquery-1.9.1.js.下載"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>接收 email</title>
+
+    <style>
+        input {
+            width: 300px;
+            font-size: 15px;
+            margin: 2px 0;
+            padding: 2px 5px;
+        }
+
+        td {
+            border: 1px solid #aaa;
+            padding: 2px 5px;
+        }
+
+        .selected {
+            color: white;
+            background: blue
+        }
+
+        button#cssColorChange:active {
+            color: white;
+            background: red
+        }
+    </style>
+</head>
+
+<body>
+
+    <DIV style="text-align:center;">
+        <h1>留下聯絡資料，方便我們聯絡你</h1>
+        <h2>* 為必填</h2>
+    </DIV>
+
+    <!-- <script>
+        $("button#jQueryColorChange").click(function () {
+            $(this).toggleClass("selected");
+        });
+    </script> -->
+
+    <!-- joey 輸入 & 預設輸入 -->
+    <div class="form-group">
+        <label for="iterm_L">* 聯絡 Email:</label>
+        <input type="text" class="form-control" id="iterm" value="OOO@XXmail.com">
+    </div>
+
+    <div class="form-group">
+        <label for="iterm_L">稱呼:</label>
+        <input type="text" class="form-control" id="today" value="聯絡者名稱">
+    </div>
+
+    <div class="form-group">
+        <label for="iterm_L">備註:</label>
+        <input type="text" class="form-control" id="remark" value="其他想說的">
+    </div>
+
+    <br>
+
+    <!-- <p><a href="/index.html">返回 index</a></p> -->
+
+    <button type="button" class="btn btn-success btn-lg btn-block" id="archange" onclick="myFunction()">確認資料</button>
+    <br>
+
+    <button type="button" class="btn btn-success btn-lg btn-block" id="clolorC" onclick="myFunction()">確認資料後傳送</button>
+    <br>
+
+    <script>
+        // 所有input輸入完成後，改變按鈕顏色
+        $("button#archange").click(function () {
+            $(this).toggleClass("selected");
+        });
+    </script>
+
+    <br>
+    <!-- joey 顯示部分 -->
+    <!-- <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item"
+            src="---"
+            width="100%" height="800" style="border:none"></iframe>
+    </div> -->
+
+    <!-- joey 輸入參數 -->
+    <!-- CSS DIV 隱藏技巧一 -->
+    <div class="form-group">
+        <!-- <label for="iterm_L"> Google App Script :</label> -->
+        <input type="text" class="form-control" id="appUrl" style="display:none"
+            value="https://script.google.com/macros/s/AKfycbwx7pucj5PrDCLUPDaxEQ9UVratieZjW6Ld3InxLa3kLIScDAwtQTLaMSffNjL42Xqw/exec">
+    </div>
+
+    <div class="form-group">
+        <!-- <label for="iterm_L"> 試算表網址：</label> -->
+        <input type="text" class="form-control" id="sheetsUrl" style="display:none"
+            value="https://docs.google.com/spreadsheets/d/1wiGBcEeM16LU8vp_jwXNIdwKrALW-lWu8U2aFiKLje0/edit#gid=0">
+    </div>
+
+    <div class="form-group">
+        <!-- <label for="iterm_L"> 工作表名稱：</label> -->
+        <input type="text" class="form-control" id="sheetName" value="email" style="display:none">
+    </div>
+
+    <!-- 寫入方式： -->
+    <select id="type" style="display:none">
+        <option value="top">從上寫入</option>
+        <option value="bottom">寫入在最後一列</option>
+    </select>
+
+
+    <!-- joey javascript 部分 -->
+    <script>
+        function myFunction() {
+            // var x = document.getElementById("today").value;
+            // console.log(x);
+            // joey-- document.get -- 取得 html input value
+            var oVDiv = document.getElementById("iterm").value;
+            var oVDiv2 = document.getElementById("today").value;
+            var oVDiv3 = document.getElementById("remark").value;
+            var data1 = ['cellPhone寫入', TT]; //TT 時間函數要放在外面
+            // joey-- 改變 Array 用 push 加值
+            data1.push(oVDiv);
+            data1.push(oVDiv2);
+            data1.push(oVDiv3);
+            var data = [data1];
+            // console.log(data);
+            //  joey-- jq - search dom # ... (要引用 cdn)
+
+            var appUrl = $('#appUrl'),
+                // var appUrl = 'https://script.google.com/macros/s/AKfycbwx7pucj5PrDCLUPDaxEQ9UVratieZjW6Ld3InxLa3kLIScDAwtQTLaMSffNjL42Xqw/exec',
+                sheetsUrl = $('#sheetsUrl'),
+                // sheetsUrl = 'https://docs.google.com/spreadsheets/d/1wiGBcEeM16LU8vp_jwXNIdwKrALW-lWu8U2aFiKLje0/edit#gid=0',
+                sheetName = $('#sheetName'),
+                // sheetName = 'email',
+                type = $('#type'),
+                // type = 'top',
+                sendBtn = $('#sendBtn'),
+                show = $('#show');
+
+            //  joey-- 定義 打包 parameter - 要傳送的 資料
+            var parameter = {};
+            parameter = {
+                url: sheetsUrl.val(),
+                name: sheetName.val(),
+                data: data.toString(),
+                row: data.length,
+                column: data[0].length,
+                insertType: type.val()
+            };
+            $.get(appUrl.val(), parameter);//用 get 傳送
+        };
+
+        // 時間轉字串，轉成yyyy-MM-dd HH:mm:SS格式 - 這支 function 要放外面 joey test
+        TT = Date().toString();
+        // console.log(TT);
+        // 時間轉字串，轉成yyyy-MM-dd HH:mm:SS格式
+
+    </script>
+
+
+
+
+</body>
+
+</html>
